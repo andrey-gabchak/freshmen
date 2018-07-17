@@ -14,7 +14,8 @@ public class Group {
         this.defaultStudentsCount = defaultStudentsCount;
         this.studentList = generateStudentsList(defaultStudentsCount);
     }
-
+    //TODO: sort students by alphabet
+    //TODO: add method to do absentees
     private ArrayList<Student> generateStudentsList(int studentsCount) {
         ArrayList<Student> studentList = new ArrayList<>(studentsCount);
         for (int i = 0; i < studentsCount; i++) {
@@ -37,15 +38,15 @@ public class Group {
         return studentList;
     }
 
-    Student chooseRandomSenior(ArrayList<Student> list) {
+    Student chooseRandomClassPresident(ArrayList<Student> list) {
         int seniorNumber = new Random().nextInt(list.size() + 1);
         Student student = list.get(seniorNumber);
-        student.setSenior(true);
+        student.setClassPresident(true);
         System.out.println("Senior of group " + groupNumber + " is " + list.get(seniorNumber).getSurname() + " " + list.get(seniorNumber).getName());
         return student;
     }
 
-    Student chooseSeniorBiggerIQ(ArrayList<Student> list) {
+    Student chooseClassPresidentIQ(ArrayList<Student> list) {
         int biggerIQ = 0;
         int seniorNumber = 0;
         for (int i = 0; i < list.size(); i++) {
@@ -54,8 +55,8 @@ public class Group {
                 seniorNumber = i;
             }
         }
-        list.get(seniorNumber).setSenior(true);
-        System.out.println("Senior (IQ) of group " + groupNumber + " is " + list.get(seniorNumber).getSurname() + " " + list.get(seniorNumber).getName());
+        list.get(seniorNumber).setClassPresident(true);
+        System.out.println("Senior (IQ) of group " + groupNumber + " is " + list.get(seniorNumber).getSurname() + " " + list.get(seniorNumber).getName() + " " + list.get(seniorNumber).getIQ());
         return list.get(seniorNumber);
     }
 }

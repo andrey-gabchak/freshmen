@@ -5,7 +5,7 @@ package academy.mate;
 public class Student {
     private String name;
     private String surname;
-    private boolean senior;
+    private boolean classPresident;
     private int IQ;
 
     public Student(String name, String surname, int IQ) {
@@ -22,12 +22,12 @@ public class Student {
         return surname;
     }
 
-    public boolean getSenior() {
-        return senior;
+    public boolean getClassPresident() {
+        return classPresident;
     }
 
-    public void setSenior(boolean senior) {
-        this.senior = senior;
+    public void setClassPresident(boolean classPresident) {
+        this.classPresident = classPresident;
     }
 
     public int getIQ() {

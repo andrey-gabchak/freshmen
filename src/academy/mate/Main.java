@@ -19,9 +19,8 @@ public class Main {
             }
         }
 
-//        groups.forEach(group -> group.chooseRandomSenior(group.getStudentList())); //random senior
-        groups.forEach(group -> group.chooseSeniorBiggerIQ(group.getStudentList())); //senior with bigger IQ
-
+//        groups.forEach(group -> group.chooseRandomClassPresident(group.getStudentList())); //random ClassPresident
+        groups.forEach(group -> group.chooseClassPresidentIQ(group.getStudentList())); //ClassPresident with bigger IQ
 
     }
 
