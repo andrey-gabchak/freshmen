@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Professor {
 
     public int rollCall (ArrayList<Student> list) {
-        list.forEach(student -> System.out.println("Surname: " + student.getSurname() + " Name: " + student.getName()));
+        list.forEach(student -> System.out.println(student.getSurname() + " " + student.getName()));
         return list.size();
     }
 
