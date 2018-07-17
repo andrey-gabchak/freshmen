@@ -5,7 +5,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    //group list
     public static void main(String[] args) {
         System.out.println("Сколько групп студентов вы хотите создать?");
         Scanner scanner = new Scanner(System.in);
@@ -16,7 +15,7 @@ public class Main {
             Group group = groups.get(i);
             System.out.println("Группа № " + group.getGroupNumber());
             for (int j = 0; j < group.getStudentList().size(); j++) {
-                System.out.println(group.getStudentList().get(i).getSurname()+ " " + group.getStudentList().get(i).getName() + " " + group.getStudentList().get(i).getIQ());
+                System.out.println(group.getStudentList().get(j).getSurname()+ " " + group.getStudentList().get(j).getName() + " " + group.getStudentList().get(j).getIQ());
             }
         }
 
@@ -28,9 +27,8 @@ public class Main {
 
     private ArrayList<Group> createGroups(int groupCount) {
         ArrayList<Group> groups = new ArrayList<>(groupCount);
-        int defaultStudentsCount = new Random().nextInt(20) + 21;
         for (int i = 0; i < groupCount; i++) {
-            Group group = new Group(i + 1, defaultStudentsCount);
+            groups.add(new Group(i + 1, new Random().nextInt(20) + 21));
         }
         return groups;
     }
