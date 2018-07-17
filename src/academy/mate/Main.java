@@ -26,9 +26,9 @@ public class Main {
 
         Professor professor = new Professor();
 
-        for (int i = 0; i < groups.size(); i++) {
-            int currentStudentCountInGroup = professor.rollCall(groups.get(i).getStudentList());
-            professor.isPrestentAll(groups.get(i).getDefaultStudentsCount(), currentStudentCountInGroup);
+        for (Group group : groups) {
+            int currentStudentCountInGroup = professor.rollCall(group);
+            professor.isPrestentAll(group.getDefaultStudentsCount(), currentStudentCountInGroup);
         }
     }
 

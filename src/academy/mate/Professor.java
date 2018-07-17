@@ -6,7 +6,9 @@ import java.util.ArrayList;
 
 public class Professor {
 
-    public int rollCall(ArrayList<Student> list) {
+    public int rollCall(Group group) {
+        ArrayList<Student> list = group.getStudentList();
+        System.out.println("Group number " + group.getGroupNumber() + "\n");
         list.forEach(student -> System.out.println(student.getSurname() + " " + student.getName()));
         return list.size();
     }
