@@ -1,7 +1,6 @@
 package academy.mate;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Random;
 
 public class Group {
@@ -15,13 +14,13 @@ public class Group {
         this.defaultStudentsCount = defaultStudentsCount;
         this.studentList = generateStudentsList(defaultStudentsCount);
     }
-    //TODO: add method to do absentees
+
     private ArrayList<Student> generateStudentsList(int studentsCount) {
         ArrayList<Student> studentList = new ArrayList<>(studentsCount);
         for (int i = 0; i < studentsCount; i++) {
             String name = ConstantsNames.nameList[new Random().nextInt(ConstantsNames.nameList.length)];
             String surname = ConstantsNames.surnamesList[new Random().nextInt(ConstantsNames.surnamesList.length)];
-            studentList.add(new Student(name, surname, new Random().nextInt(70) + 100));
+            studentList.add(new Student(name, surname, new Random().nextInt((70) + 100), new Random().nextBoolean()));
         }
         return studentList;
     }
@@ -30,19 +29,19 @@ public class Group {
         return groupNumber;
     }
 
-    public int getDefaultStudentsCount() {
-        return defaultStudentsCount;
-    }
-
     public ArrayList<Student> getStudentList() {
         return studentList;
+    }
+
+    public int getDefaultStudentsCount() {
+        return defaultStudentsCount;
     }
 
     Student chooseRandomClassPresident(ArrayList<Student> list) {
         int seniorNumber = new Random().nextInt(list.size() + 1);
         Student student = list.get(seniorNumber);
         student.setClassPresident(true);
-        System.out.println("Senior of group " + groupNumber + " is " + list.get(seniorNumber).getSurname() + " " + list.get(seniorNumber).getName());
+        System.out.println("Class president " + groupNumber + " is " + list.get(seniorNumber).getSurname() + " " + list.get(seniorNumber).getName());
         return student;
     }
 
@@ -56,7 +55,7 @@ public class Group {
             }
         }
         list.get(seniorNumber).setClassPresident(true);
-        System.out.println("Senior (IQ) of group " + groupNumber + " is " + list.get(seniorNumber).getSurname() + " " + list.get(seniorNumber).getName() + " " + list.get(seniorNumber).getIQ());
+        System.out.println("Class president of group " + groupNumber + " is " + list.get(seniorNumber).getSurname() + " " + list.get(seniorNumber).getName() + ". IQ " + list.get(seniorNumber).getIQ());
         return list.get(seniorNumber);
     }
 

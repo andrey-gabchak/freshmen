@@ -26,11 +26,8 @@ public class Main {
         groups.forEach(group -> group.chooseClassPresidentIQ(group.getStudentList())); //ClassPresident with bigger IQ
 
         Professor professor = new Professor();
+        groups.forEach(professor::rollCall);
 
-        for (Group group : groups) {
-            int currentStudentCountInGroup = professor.rollCall(group);
-            professor.isPrestentAll(group.getDefaultStudentsCount(), currentStudentCountInGroup);
-        }
     }
 
     private ArrayList<Group> createGroups(int groupCount) {
