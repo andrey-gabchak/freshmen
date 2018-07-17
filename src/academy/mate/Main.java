@@ -13,15 +13,6 @@ public class Main {
         Main main = new Main();
         ArrayList<Group> groups = main.createGroups(groupCount);
 
-        //test for filling of groups
-        /*for (int i = 0; i < groups.size(); i++) {
-            Group group = groups.get(i);
-            System.out.println("Группа № " + group.getGroupNumber());
-            for (int j = 0; j < group.getStudentList().size(); j++) {
-                System.out.println(group.getStudentList().get(j).getSurname()+ " " + group.getStudentList().get(j).getName() + " " + group.getStudentList().get(j).getIQ());
-            }
-        }*/
-
 //        groups.forEach(group -> group.chooseRandomClassPresident(group.getStudentList())); //random ClassPresident
         groups.forEach(group -> group.chooseClassPresidentIQ(group.getStudentList())); //ClassPresident with bigger IQ
 

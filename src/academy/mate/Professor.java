@@ -1,7 +1,5 @@
 package academy.mate;
 
-// Професор має вміти провести перекличку та визначити, чи всі студенти присутні (результат виводиться в консоль);
-
 import java.util.ArrayList;
 
 public class Professor {
