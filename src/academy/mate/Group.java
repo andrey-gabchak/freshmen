@@ -1,6 +1,7 @@
 package academy.mate;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Random;
 
 public class Group {
@@ -14,7 +15,6 @@ public class Group {
         this.defaultStudentsCount = defaultStudentsCount;
         this.studentList = generateStudentsList(defaultStudentsCount);
     }
-    //TODO: sort students by alphabet
     //TODO: add method to do absentees
     private ArrayList<Student> generateStudentsList(int studentsCount) {
         ArrayList<Student> studentList = new ArrayList<>(studentsCount);
@@ -59,4 +59,5 @@ public class Group {
         System.out.println("Senior (IQ) of group " + groupNumber + " is " + list.get(seniorNumber).getSurname() + " " + list.get(seniorNumber).getName() + " " + list.get(seniorNumber).getIQ());
         return list.get(seniorNumber);
     }
+
 }

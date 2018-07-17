@@ -1,6 +1,7 @@
 package academy.mate;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -36,6 +37,9 @@ public class Main {
         ArrayList<Group> groups = new ArrayList<>(groupCount);
         for (int i = 0; i < groupCount; i++) {
             groups.add(new Group(i + 1, new Random().nextInt(20) + 21));
+        }
+        for (Group group : groups) {
+            group.getStudentList().sort(Comparator.comparing(Student::getSurname));
         }
         return groups;
     }
