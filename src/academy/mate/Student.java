@@ -7,11 +7,13 @@ public class Student {
     private String surname;
     private boolean classPresident;
     private int IQ;
+    private boolean presence;
 
-    public Student(String name, String surname, int IQ) {
+    public Student(String name, String surname, int IQ, boolean presence) {
         this.name = name;
         this.surname = surname;
         this.IQ = IQ;
+        this.presence = presence;
     }
 
     public String getName() {
@@ -22,7 +24,7 @@ public class Student {
         return surname;
     }
 
-    public boolean getClassPresident() {
+    public boolean isClassPresident() {
         return classPresident;
     }
 
@@ -32,5 +34,9 @@ public class Student {
 
     public int getIQ() {
         return IQ;
+    }
+
+    public boolean isPresence() {
+        return presence;
     }
 }
