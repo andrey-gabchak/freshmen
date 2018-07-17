@@ -11,17 +11,25 @@ public class Main {
         int groupCount = scanner.nextInt();
         Main main = new Main();
         ArrayList<Group> groups = main.createGroups(groupCount);
-        for (int i = 0; i < groups.size(); i++) {
+
+        //test for filling of groups
+        /*for (int i = 0; i < groups.size(); i++) {
             Group group = groups.get(i);
             System.out.println("Группа № " + group.getGroupNumber());
             for (int j = 0; j < group.getStudentList().size(); j++) {
                 System.out.println(group.getStudentList().get(j).getSurname()+ " " + group.getStudentList().get(j).getName() + " " + group.getStudentList().get(j).getIQ());
             }
-        }
+        }*/
 
 //        groups.forEach(group -> group.chooseRandomClassPresident(group.getStudentList())); //random ClassPresident
         groups.forEach(group -> group.chooseClassPresidentIQ(group.getStudentList())); //ClassPresident with bigger IQ
 
+        Professor professor = new Professor();
+
+        for (int i = 0; i < groups.size(); i++) {
+            int currentStudentCountInGroup = professor.rollCall(groups.get(i).getStudentList());
+            professor.isPrestentAll(groups.get(i).getDefaultStudentsCount(), currentStudentCountInGroup);
+        }
     }
 
     private ArrayList<Group> createGroups(int groupCount) {
